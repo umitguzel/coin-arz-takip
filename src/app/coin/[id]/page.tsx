@@ -59,7 +59,6 @@ export default function CoinDetailPage() {
     ]
   };
 
- import { ChartOptions } from "chart.js";
 
 const chartOptions: ChartOptions<"line"> = {
   responsive: true,
