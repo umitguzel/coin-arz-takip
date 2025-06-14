@@ -57,24 +57,27 @@ export default function CoinDetailPage() {
     ]
   };
 
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: { position: "top" },
-      title: {
-        display: true,
-        text: "Dolaşımdaki Arz (Son 60 Gün)",
-        font: { size: 18 }
-      }
-    },
-    scales: {
-      y: {
-        ticks: {
-          callback: (value: any) => value.toLocaleString("tr-TR")
-        }
+ import { ChartOptions } from "chart.js";
+
+const chartOptions: ChartOptions<"line"> = {
+  responsive: true,
+  plugins: {
+    legend: { position: "top" as const }, // 🔧 Burada düzeltme yapıldı
+    title: {
+      display: true,
+      text: "Dolaşımdaki Arz (Son 60 Gün)",
+      font: { size: 18 }
+    }
+  },
+  scales: {
+    y: {
+      ticks: {
+        callback: (value: any) => value.toLocaleString("tr-TR")
       }
     }
-  };
+  }
+};
+
 
   return (
     <main className="p-6 bg-gradient-to-b from-gray-100 to-white min-h-screen">
